@@ -3,8 +3,8 @@
     By Darwin Vickers
     COMP1917 UNSW
 
-    ![dinosaur](output/dinosaur.bmp)
-    ![teapot](output/teapot.bmp)
+![dinosaur](output/dinosaur.bmp)
+![teapot](output/teapot.bmp)
 
     See example.c for typical usage.
     Look in .h files for more in-depth documentation.
