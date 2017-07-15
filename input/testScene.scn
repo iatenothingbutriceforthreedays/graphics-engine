@@ -1,0 +1,9 @@
+# scene including a blue head and a green monkey and a couple of lights
+
+c -2.0 2.0 2.0 1.0 -1.0 -1.0 0.0 200.0
+
+l -2.5 2.0 2.0 12.0
+l 0.0 -1.0 -2.0 3.0
+
+o head.msh 0 0 255
+o monkey.msh 0 255 0

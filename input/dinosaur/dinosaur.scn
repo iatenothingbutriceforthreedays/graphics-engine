@@ -1,0 +1,14 @@
+# dinosaur!!
+
+c 10.0 6.0 3.0 -1.0 -0.3 -0.3 0.0 13.0
+
+l 10.0 10.0 10.0 200.0
+# l 0.0 -1.0 -2.0 3.0
+
+o body.msh 0 200 0
+o spikes.msh 128 200 0
+o plane.msh 100 100 100
+o rightEyeOuter.msh 200 200 200
+o leftEyeOuter.msh 200 200 200
+o rightEyeInner.msh 40 40 40
+o leftEyeInner.msh 40 40 40

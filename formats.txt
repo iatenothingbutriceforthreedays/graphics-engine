@@ -1,0 +1,69 @@
+This engine deals with files in two formats, both custom: '.scn', and '.msh'. A '.msh' file describes the geometry of a single object, while .scn describes a scene, including lights, meshes and a camera. Information on both formats is given below.
+
+.msh
+   - Generally similar to the Wavefront .msh format, but only supports triangles. Most .msh files will be readable if renamed to "___.scn", so long as each face is triangular.
+
+   - Not the same as or compatible with the Orbiter 3D '.msh' format.
+
+   - Lines beginning with 'v' describe vertices. They are in the format:
+      v x y z
+   where x, y, and z are floating point numbers describing the position of the vertex in global space.
+
+   - Lines beginning with 'f' describe triangular faces. They are in the format:
+      f i j k
+   where i, j, and k are integers describing the corners of the triangle, by reference to the vertices defined in the same file. E.g., 'f 1 2 4' would refer to the triangle consisting of the first, second and fourth vertices defined in the file. The order of i, j and k is not important.
+
+   - Any line not beginning with 'v' or 'f' is considered a comment.
+
+   - An example; a .msh describing a 'bent parallelogram' (file contents enclosed in braces):
+   {
+      # example.msh
+      # a a bent parallelogram
+
+      # vertices:
+      v 1.0 0.0 0.0
+      v 0.0 1.0 0.0
+      v 0.0 0.0 1.0
+      v 0.0 0.0 -1.0
+
+      # faces:
+      f 1 3 4
+      f 2 3 4
+   }
+
+.scn
+   - There must be exactly one line beginning with 'c'; this line describes the position of the camera, in the format:
+      c Px Py Pz Nx Ny Nz t s
+   where:
+   Px, Py, and Pz are floating point numbers describing the position of the camera's centre in global space
+   Nx, Ny, Nz are floating point components of the camera's axis (the direction in which it is facing).
+   t is a floating point number describing the counter-clockwise angle (in radians) by which the camera is rotated around its axis.
+      This is defined such that when t = 0 the camera's local 'up' points towards the positive y-axis.
+   s is a floating point number describing the scale of the camera - how many spatial units the camera can see (on its longest side if not square).
+
+   - Lines beginning with 'o' describe material objects in the scene, in the format:
+      o filename.msh r g b
+   where:
+   filename.msh is the filename of a valid .msh file (not enclosed in quotes). Path is relative to the .scn file.
+   r, g, and b are integers in the range (0, 255) inclusive and describe the RGB components of the object's colour.
+
+   - Lines beginning with 'l' describes a point light source, in the format:
+      l x y z p
+   where x, y, and z are floating point numbers describing the position of the light, and p is a floating point number describing the power of the light.
+
+   - Any line not beginning with 'c', 'o' or 'l' is considered a comment.
+
+   - An example; a .scn describing a scene containing a purple 'bent parallelogram' and one light source (file contents enclosed in braces).
+   {
+      # example.scn
+      # a pretty scene
+
+      # the object:
+      o example.msh 128 0 255
+
+      # camera:
+      c 0.0 0.0 0.0 0.0 0.0 -1.0 0.0 200.0
+
+      # and one dim light behind the camera
+      l 0.0 0.0 0.5 10.0
+   }
