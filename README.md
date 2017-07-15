@@ -53,7 +53,6 @@
       testGeometry.c
 
     Other.
-      changelog.txt changes since last revision.
       format.txt information on MSH and SCN formats.
       example.c is an example usage of the library.
-      There are a few samle .scn and .msh files in the 'input' folder.
+      There are a few sample .scn and .msh files in the 'input' folder.
