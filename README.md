@@ -3,8 +3,8 @@ this revision 17/05/2014.
 By Darwin Vickers
 COMP1917 UNSW
 
-/Users/darwinvickers/school/2014/Semester 1/COMP1917/scripts/awesome/toUpload/Update 6/output/dinosaur.bmp
-/Users/darwinvickers/school/2014/Semester 1/COMP1917/scripts/awesome/toUpload/Update 6/output/teapot.bmp
+[dinosaur](output/dinosaur.bmp)
+[teapot](output/teapot.bmp)
 
 See example.c for typical usage.
 Look in .h files for more in-depth documentation.
