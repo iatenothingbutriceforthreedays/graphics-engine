@@ -8,17 +8,6 @@ Look in .h files for more in-depth documentation.
 
 An overview of project contents follows:
 
-(First, a note on dependencies.)
-I don't really understand header guards,
-so instead I've opted to list the dependencies
-of each module in its .h file.
-Whenever multiple modules are used, one must be
-careful with the order in which they are #included.
-The .h file for a given module should be #included
-only *after* all of that module's dependencies.
-In addition, the .c files for each dependency must
-be compiled.
-
 Libraries.
 
    shared: handy functions + basic types
